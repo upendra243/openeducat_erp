@@ -7,6 +7,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Marksheet Line">
+                    <field name="exam_session_id" />
                     <field name="student_id" />
                     <field name="total_marks" />
                     <field name="percentage" />
@@ -24,6 +25,7 @@
                 <form string="Marksheet Line">
                     <sheet>
                         <group colspan="4" col="4">
+                            <field name="exam_session_id" />
                             <field name="student_id" />
                             <field name="status" />
                             <field name="total_marks" />

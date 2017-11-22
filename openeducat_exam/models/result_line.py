@@ -30,6 +30,7 @@ class OpResultLine(models.Model):
     marksheet_line_id = fields.Many2one(
         'op.marksheet.line', 'Marksheet Line', ondelete='cascade')
     exam_id = fields.Many2one('op.exam', 'Exam', required=True)
+    exam_session_id = fields.Many2one('op.exam.session', 'Exam Session', required=True)
     evaluation_type = fields.Selection(
         related='exam_id.session_id.evaluation_type', store=True)
     marks = fields.Integer('Marks', required=True)

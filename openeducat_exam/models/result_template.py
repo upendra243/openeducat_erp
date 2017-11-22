@@ -87,6 +87,7 @@ class OpResultTemplate(models.Model):
             for exam in record.exam_session_id.exam_ids:
                 for attendee in exam.attendees_line:
                     result_line_id = self.env['op.result.line'].create({
+                        'exam_session_id': record.exam_session_id.id,
                         'student_id': attendee.student_id.id,
                         'exam_id': exam.id,
                         'marks': str(attendee.marks and attendee.marks or 0),
@@ -96,6 +97,7 @@ class OpResultTemplate(models.Model):
                     student_dict[attendee.student_id.id].append(result_line_id)
             for student in student_dict:
                 marksheet_line_id = self.env['op.marksheet.line'].create({
+                    'exam_session_id': record.exam_session_id.id,
                     'student_id': student,
                     'marksheet_reg_id': marksheet_reg_id.id,
                 })

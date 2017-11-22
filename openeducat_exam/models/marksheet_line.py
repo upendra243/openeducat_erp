@@ -34,6 +34,7 @@ class OpMarksheetLine(models.Model):
     student_id = fields.Many2one('op.student', 'Student', required=True)
     result_line = fields.One2many(
         'op.result.line', 'marksheet_line_id', 'Results')
+    exam_session_id = fields.Many2one('op.exam.session', 'Exam Session', required=True)    
     total_marks = fields.Integer("Total Marks", compute='_compute_total_marks')
     percentage = fields.Float("Percentage", compute='_compute_percentage')
     grade = fields.Char('Grade', readonly=True, compute='_compute_grade')

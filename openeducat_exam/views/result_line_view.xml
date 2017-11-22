@@ -7,6 +7,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Result Line">
+                    <field name="exam_session_id" />
                     <field name="student_id" />
                     <field name="exam_id" />
                     <field name="marks" />
@@ -24,6 +25,7 @@
                 <form string="Result Line">
                     <sheet>
                         <group colspan="4" col="4">
+                            <field name="exam_session_id" />
                             <field name="student_id" />
                             <field name="exam_id" />
                             <field name="marks" />
