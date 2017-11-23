@@ -29,3 +29,4 @@ from . import marksheet_line
 from . import marksheet_register
 from . import result_line
 from . import result_template
+from . import marksheet_final

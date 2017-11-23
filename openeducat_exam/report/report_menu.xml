@@ -2,16 +2,24 @@
 <odoo>
     <data>
 
-        <report 
+        <report
             id="report_marksheet"
             string="Marksheet"
             model="op.marksheet.register"
             report_type="qweb-pdf"
             file="openeducat_exam.report_marksheet_report"
             name="openeducat_exam.report_marksheet_report"
-        /> 
+        />
+        <report
+            id="report_marksheet_final"
+            string="Marksheet Final"
+            model="op.marksheet.final"
+            report_type="qweb-pdf"
+            file="openeducat_exam.report_marksheet_final_report"
+            name="openeducat_exam.report_marksheet_final_report"
+        />
 
-        <report 
+        <report
             id="action_student_hall_ticket_report"
             model="op.exam.session"
             string="Student Hall Ticket"

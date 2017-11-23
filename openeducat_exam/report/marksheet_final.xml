@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_marksheet_final_report">
+            <style>
+                .font{
+                font-size:14px;
+                font-family:"Helvetica"
+                }
+                @page{
+                margin-top:1%;
+                size: A4;
+                }
+            </style>
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="font">
+                        <div class="page">
+                            <t t-foreach="get_objects_new(docs_new)" t-as="objs">
+                                <t t-foreach="objs" t-as="obj">
+                                    <t t-foreach="get_lines_new(obj)" t-as="lines">
+                                            <div class="row text-center">
+                                                <h2>
+                                                    <strong>MarkSheet
+                                                    </strong>
+                                                </h2>
+                                            </div>
+                                            <br></br>
+                                            <br></br>
+                                            <t t-if="obj.result_template_id.exam_session_id.evaluation_type == 'normal'">
+                                                <table width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td
+                                                                width="17%">
+                                                                <b>Student Name
+                                                                </b>
+                                                            </td>
+                                                            <td>
+                                                                :
+                                                                <span t-raw="'%s' % get_student_name(lines)" />
+                                                            </td>
+                                                            <td
+                                                                width="15%">
+                                                                <b>Course
+                                                                </b>
+                                                            </td>
+                                                            <td>
+                                                                :
+                                                                <span
+                                                                    t-raw="'%s' %  get_course_name(lines)" />
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br></br>
+                                                <br></br>
+                                                <table
+                                                    class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2"
+                                                                class="text-center">Subject
+                                                            </th>
+                                                            <th t-att-colspan="get_calspan(obj)" class="text-center">
+                                                                Examination Marks
+                                                            </th>
+                                                            <th colspan="3" class="text-center"> Grand Total</th>
+                                                        </tr>
+                                                        <tr>
+                                                        <th
+                                                            class="text-center">Maximum
+                                                            Marks
+                                                        </th>
+                                                        <th
+                                                            class="text-center">Passing
+                                                            Marks
+                                                        </th>
+                                                        <t t-foreach="get_all_session_names(obj)" t-as="session">
+                                                            <th
+                                                                class="text-center"><span t-raw="'%s' %  session" />
+                                                            </th>
+                                                        </t>
+
+                                                        <th
+                                                            class="text-center">Total
+                                                            Marks
+                                                        </th>
+                                                        <th
+                                                            class="text-center">Passing
+                                                            Marks
+                                                        </th>
+                                                        <th
+                                                            class="text-center">Obtained
+                                                            Marks
+                                                        </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>2</td>
+                                                            <td>3</td>
+                                                            <td>4</td>
+                                                            <td>5</td>
+                                                            <td>6</td>
+                                                            <td>7</td>
+                                                            <td>8</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </t>
+                                            <p style="page-break-after: always;"></p>
+                                        </t>
+                                </t>
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

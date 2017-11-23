@@ -27,8 +27,13 @@
             groups="openeducat_core.group_op_back_office,openeducat_core.group_op_back_office_admin,openeducat_core.group_op_faculty" />
 
         <menuitem id="menu_op_marksheet_register_sub" name="Marksheet Registers"
-            parent="menu_op_school_exam_result" sequence="100"
+            parent="menu_op_school_exam_result" sequence="90"
             action="act_open_op_marksheet_register_view"
+            groups="openeducat_core.group_op_back_office,openeducat_core.group_op_back_office_admin,openeducat_core.group_op_faculty" />
+
+        <menuitem id="menu_op_marksheet_final_sub" name="Marksheet Final"
+            parent="menu_op_school_exam_result" sequence="100"
+            action="act_open_op_marksheet_final_view"
             groups="openeducat_core.group_op_back_office,openeducat_core.group_op_back_office_admin,openeducat_core.group_op_faculty" />
         <menuitem id="menu_op_marksheet_line_sub" name="Marksheet Lines"
             parent="menu_op_school_exam_result" sequence="110"
